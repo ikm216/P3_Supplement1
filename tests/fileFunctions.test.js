@@ -27,7 +27,7 @@ describe('File Operations Tests', () => {
   test('should count the number of lines in the file', () => {
     const content = "Chicken\nIn\nThe\nCoop\n"
     fs.writeFileSync(testFilePath, content);
-    const lineCount = lineCount(testFilePath)
+    const lineCount = countLines(testFilePath)
     expect(lineCount).toBe(4)
   })
 });
