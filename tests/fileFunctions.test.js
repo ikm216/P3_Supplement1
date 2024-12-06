@@ -16,4 +16,11 @@ describe('File Operations Tests', () => {
     writeFile(testFilePath, 'Grind it Out!');
     expect(fs.existsSync(testFilePath)).toBe(true);
   });
+
+  test('should read content from a file', () => {
+    const content = 'Chicken On Me';
+    fs.writeFileSync(testFilePath, content);
+    const readContent = readFile(testFilePath);
+    expect(readContent).toBe(content);
+  });
 });
