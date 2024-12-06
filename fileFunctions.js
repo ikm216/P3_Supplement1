@@ -19,7 +19,10 @@ function writeFile(filePath, content) {
 function readFile(filePath) {
     return fs.readFileSync(filePath, 'utf8');
 }
+function countLines(filePath) {
+    const content = fs.readFileSync(filePath, 'utf8');
+    return content.split('\n').filter(line => line.trim().length > 0).length;
+  }
 
 
-
-  module.exports = { writeFile, readFile,  };
+  module.exports = { writeFile, readFile, countLines };
