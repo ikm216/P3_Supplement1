@@ -23,4 +23,11 @@ describe('File Operations Tests', () => {
     const readContent = readFile(testFilePath);
     expect(readContent).toBe(content);
   });
+
+  test('should count the number of lines in the file', () => {
+    const content = "Chicken\nIn\nThe\nCoop\n"
+    fs.writeFileSync(testFilePath, content);
+    const lineCount = lineCount(testFilePath)
+    expect(lineCount).toBe(4)
+  })
 });
