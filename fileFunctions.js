@@ -19,6 +19,12 @@ function writeFile(filePath, content) {
 function readFile(filePath) {
     return fs.readFileSync(filePath, 'utf8');
 }
+/**
+ * Counts the number of lines in a file.
+ * 
+ * @param {string} filePath - Path to the file.
+ * @returns {number} - Number of lines in the file.
+ */
 function countLines(filePath) {
     const content = fs.readFileSync(filePath, 'utf8');
     return content.split('\n').filter(line => line.trim().length > 0).length;
